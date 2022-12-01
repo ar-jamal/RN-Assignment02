@@ -37,6 +37,7 @@ const cusColors = {
     brownShades04: "#A67B5B",
     brownShades05: "#BC9773",
     brownShades06: "#C8AD7F",
+    brownShades07: "#681010",
     brownThemeLight: "#AC9377",
     brownThemeMid: "#8D7252",
     brownThemeDark: "#6D5438",
