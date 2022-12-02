@@ -200,6 +200,7 @@ const styles = StyleSheet.create({
         color: "yellow",
         borderBottomColor: 'black',
     },
+    
 })
 
 export default App;
