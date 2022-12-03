@@ -7,6 +7,7 @@ const cusColors = {
     switchColorOff: "blue",
     offWhite: "#EFEFED",
     offWhiteDark: "#EAEAE8",
+    offWhite02: "#BBB4B4",
     offWhiteDarkMore: "#E3E3E1",
     melaWhite: "#DED8CD",
     melaWhiteDark: "#CFCAB5",
