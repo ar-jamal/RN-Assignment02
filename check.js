@@ -16,3 +16,6 @@ const [titleLength, setTitleLength] = useState('');
       </>
 
     );
+
+
+    const titleLenght = selectedItem.title.length % 30 > 0 ? selectedItem.title.slice()
