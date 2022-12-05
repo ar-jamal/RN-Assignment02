@@ -28,6 +28,7 @@ const globalStyles = StyleSheet.create({
     },
     scrollView: {
         width: "100%",
+        
         // backgroundColor: "lightyellow",
 
     },

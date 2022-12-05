@@ -1,6 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -100,11 +100,11 @@ export default function HomeScreen() {
                   style={globalStyles.cardUnit}
                   key={i}
                   onPress={() => onItemPressHandler(e)}>
-                  <View style={{ justifyContent: 'space-between', flex: 7 }}>
+                  <View style={{justifyContent: 'space-between', flex: 7}}>
                     <Image
                       resizeMode="contain"
                       style={globalStyles.image}
-                      source={{ uri: `${listItems[i].image}` }}
+                      source={{uri: `${listItems[i].image}`}}
                     />
                     <Text style={globalStyles.price}>${e.price}</Text>
                   </View>
@@ -112,7 +112,7 @@ export default function HomeScreen() {
                 </TouchableOpacity>
               ))
             ) : (
-              <Text style={{ alignSelf: 'center', alignContent: 'center' }}>
+              <Text style={{alignSelf: 'center', alignContent: 'center'}}>
                 no data found
               </Text>
             )}
@@ -122,4 +122,3 @@ export default function HomeScreen() {
     </SafeAreaView>
   );
 }
-
