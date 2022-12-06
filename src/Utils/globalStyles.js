@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native"
 import cusColors from "./colors"
 
 const globalStyles = StyleSheet.create({
-    mainView: {
+        mainView: {
         width: '100%',
         height: '100%',
         flex: 1,
@@ -36,18 +36,20 @@ const globalStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
         margin: 12,
+        textDecorationLine: "underline"
     },
     cardView: {
         flexWrap: "wrap",
         flexDirection: "row",
         width: "100%",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         padding: 4,
         // backgroundColor: "yellowgreen",
         // opacity: .5,
     },
     cardUnit: {
-        width: 85,
+        width: "20.95%",
+        // width: 85,
         height: 220,
         margin: 6,
         alignItems: "center",
