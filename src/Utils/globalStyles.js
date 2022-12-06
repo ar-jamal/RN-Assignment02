@@ -64,11 +64,13 @@ const globalStyles = StyleSheet.create({
     // backgroundColor: "yellow",
   },
   price: {
+    aligntext: 'center',
     fontSize: 14,
     fontWeight: '700',
   },
   text: {
     fontSize: 14,
+    marginBottom: 8,
   },
   chipView: {
     width: 50,

@@ -79,24 +79,24 @@ export default function ItemDetails({Navigation, route}) {
                     style={styles.selectedItemImage}
                     source={{uri: `${selectedItem[0].image}`}}
                   />
+                  <Text style={globalStyles.price}>
+                    Price: ${selectedItem[0].price}
+                  </Text>
                 </View>
                 <View style={styles.selectedItemRightView}>
-                  <Text style={globalStyles.price}>
-                    ${selectedItem[0].price}
-                  </Text>
                   <Text style={globalStyles.text}>{selectedItem[0].title}</Text>
-                </View>
-              </View>
-              <ScrollView style={styles.selectedItemLowerView}>
-                <View>
                   <Text style={{fontSize: 14, fontWeight: '600'}}>
                     Description:
                   </Text>
-                  <Text style={globalStyles.text}>
-                    {selectedItem[0].description}
-                  </Text>
+                  <ScrollView style={styles.selectedItemLowerView}>
+                    <View style={{height: 100}}>
+                      <Text style={globalStyles.text}>
+                        {selectedItem[0].description}
+                      </Text>
+                    </View>
+                  </ScrollView>
                 </View>
-              </ScrollView>
+              </View>
             </View>
             <View style={[globalStyles.cardView]}>
               {sameCatList.map((e, i) => (
@@ -131,10 +131,11 @@ const styles = StyleSheet.create({
   selectedItemView: {
     justifyContent: 'center',
     width: '95%',
+    height: '30%',
     padding: '3.5%',
     borderRadius: 30,
     marginHorizontal: 10,
-    height: '40%',
+    marginBottom: 15,
     backgroundColor: 'lightyellow',
   },
   selectedItemUpperView: {
@@ -143,22 +144,25 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     width: '100%',
     // flex: 4,
-    height: '50%',
+    height: '100%',
     marginBottom: 8,
+    padding: 8,
     // backgroundColor: "blue",
   },
   selectedItemLeftView: {
+    // width
+    // alignItems: 'center',
     marginRight: 15,
-    flex: 2,
+    flex: 2.3,
+    // justifyContent: 'space-between',
     // backgroundColor: "red",
   },
   selectedItemRightView: {
     flex: 6,
   },
-  selectedItemLowerView: {
-    height: '3%',
-  },
+  // selectedItem
   selectedItemImage: {
-    height: '100%',
+    height: '90%',
+    // marginBottom: 6,
   },
 });
