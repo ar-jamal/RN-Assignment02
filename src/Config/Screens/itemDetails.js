@@ -72,32 +72,34 @@ export default function ItemDetails({Navigation, route}) {
               {selectedItem[0].category}
             </Text>
             <View style={styles.selectedItemView}>
-              <View style={styles.selectedItemUpperView}>
-                <View style={styles.selectedItemLeftView}>
-                  <Image
-                    resizeMode="contain"
-                    style={styles.selectedItemImage}
-                    source={{uri: `${selectedItem[0].image}`}}
-                  />
-                  <Text style={globalStyles.price}>
-                    Price: ${selectedItem[0].price}
-                  </Text>
-                </View>
-                <View style={styles.selectedItemRightView}>
-                  <Text style={globalStyles.text}>{selectedItem[0].title}</Text>
-                  <Text style={{fontSize: 14, fontWeight: '600'}}>
-                    Description:
-                  </Text>
-                  <ScrollView style={styles.selectedItemLowerView}>
-                    <View style={{height: 100}}>
-                      <Text style={globalStyles.text}>
-                        {selectedItem[0].description}
-                      </Text>
-                    </View>
+              {/* <View style={styles.selectedItemUpperView}> */}
+              <View style={styles.selectedItemLeftView}>
+                <Image
+                  resizeMode="contain"
+                  style={styles.selectedItemImage}
+                  source={{uri: `${selectedItem[0].image}`}}
+                />
+                <Text style={globalStyles.price}>
+                  Price: ${selectedItem[0].price}
+                </Text>
+              </View>
+              <View style={styles.selectedItemRightView}>
+                <Text style={globalStyles.text}>{selectedItem[0].title}</Text>
+                <Text style={{fontSize: 14, fontWeight: '600'}}>
+                  Description:
+                </Text>
+                <View
+                 style={{height: 60}}
+                 >
+                  <ScrollView>
+                    <Text style={globalStyles.text}>
+                      {selectedItem[0].description}
+                    </Text>
                   </ScrollView>
                 </View>
               </View>
             </View>
+            {/* </View> */}
             <View style={[globalStyles.cardView]}>
               {sameCatList.map((e, i) => (
                 <TouchableOpacity
@@ -129,40 +131,28 @@ export default function ItemDetails({Navigation, route}) {
 
 const styles = StyleSheet.create({
   selectedItemView: {
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     width: '95%',
-    height: '30%',
-    padding: '3.5%',
-    borderRadius: 30,
+    height: '33%',
+    padding: '4%',
+    // paddingBottom: 5,
+    borderRadius: 25,
     marginHorizontal: 10,
     marginBottom: 15,
     backgroundColor: 'lightyellow',
   },
-  selectedItemUpperView: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    width: '100%',
-    // flex: 4,
-    height: '100%',
-    marginBottom: 8,
-    padding: 8,
-    // backgroundColor: "blue",
-  },
   selectedItemLeftView: {
-    // width
-    // alignItems: 'center',
     marginRight: 15,
     flex: 2.3,
-    // justifyContent: 'space-between',
-    // backgroundColor: "red",
   },
   selectedItemRightView: {
     flex: 6,
+    backgroundColor: "yellow",
   },
-  // selectedItem
   selectedItemImage: {
-    height: '90%',
-    // marginBottom: 6,
+    height: '85%',
+    marginBottom: 3,
   },
 });
