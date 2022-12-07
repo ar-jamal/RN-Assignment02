@@ -44,5 +44,6 @@ const cusColors = {
   brownThemeDark: '#6D5438',
   greyColor: '#E5E5E5',
   NavyblueColor: '#2B3444',
+  lighSkyColor: "#B8A8BD"
 };
 export default cusColors;

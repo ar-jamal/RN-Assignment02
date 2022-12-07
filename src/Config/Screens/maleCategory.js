@@ -14,65 +14,63 @@ import {
 } from 'react-native';
 import globalStyles from '../../Utils/globalStyles';
 
-export default function ItemDetails({ Navigation, route }) {
+export default function MaleCategory({ Navigation, route }) {
 
-    const selectedItemId = route.params[0]
-    const sameCatList = route.params[1]
-    // console.log(sameCatList)
-    const [selectedState, setSelectedState] = useState({
+    // const selectedItemId = route.params[0]
+    // const sameCatList = route.params[1]
+    
+    // const [selectedState, setSelectedState] = useState({
+        
+    //     selectedItem: sameCatList.filter(e => e.id === selectedItemId),
+    //     sameCatListFiltered: sameCatList.filter(e => e.id !== selectedItemId)
+    // })
 
-        selectedItem: sameCatList.find(e => e.id === selectedItemId),
-        sameCatListFiltered: sameCatList.filter(e => e.id !== selectedItemId)
-    })
-    // console.log(selectedState.selectedItem)
+    // console.log(selectedState.sameCatListFiltered);
+    // console.log(sameCatList);
 
-    console.log(selectedState.sameCatListFiltered);
-    console.log(sameCatList);
+    // const [loader, setloader] = useState(false);
 
-    const [loader, setloader] = useState(false);
+    // const cusChip = val => {
+    //     return (
+    //         <View style={globalStyles.chipView}>
+    //             <Text style={globalStyles.chipText}>more</Text>
+    //         </View>
+    //     );
+    // };
+    // const titleHandler = val => {
+    //     const title = val.length > 12 ? val.slice(0, 12) + '...' : val;
+    //     return (
+    //         <View
+    //             style={{
+    //                 justifyContent: 'space-between',
+    //                 backgroundColor: 'yellow',
+    //                 width: '100%',
+    //                 flex: 3,
+    //                 paddingHorizontal: 6,
+    //                 paddingBottom: 6,
+    //             }}>
+    //             <Text style={globalStyles.text}>{title}</Text>
+    //             {cusChip(val)}
+    //         </View>
+    //     );
+    // };
 
-    const cusChip = val => {
-        return (
-            <View style={globalStyles.chipView}>
-                <Text style={globalStyles.chipText}>more</Text>
-            </View>
-        );
-    };
-    const titleHandler = val => {
-        const title = val.length > 12 ? val.slice(0, 12) + '...' : val;
-        return (
-            <View
-                style={{
-                    justifyContent: 'space-between',
-                    backgroundColor: 'yellow',
-                    width: '100%',
-                    flex: 3,
-                    paddingHorizontal: 6,
-                    paddingBottom: 6,
-                    borderRadius: 15
-                }}>
-                <Text style={globalStyles.text}>{title}</Text>
-                {cusChip(val)}
-            </View>
-        );
-    };
+    // const onSameCatPressHandler = (val) => {
+    //     console.log(val)
+    //     const selectedItem02 = sameCatList.filter(e => e.id === val);
+    //     const sameCatListFiltered02 = sameCatList.filter(e => e.id === val);
+    //     setSelectedState({
+            
+    //         selectedItem: selectedItem02,
+    //         sameCatListFiltered: sameCatListFiltered02
+    //     })
+    //     console.log(selectedState.selectedItem)
+    // }
 
-    const onSameCatPressHandler = (val) => {
-        console.log('val', val)
-        const selectedItem02 = sameCatList.find(e => e.id === val);
-        const sameCatListFiltered02 = sameCatList.filter(e => e.id !== val);
-        setSelectedState({
-
-            selectedItem: selectedItem02,
-            sameCatListFiltered: sameCatListFiltered02
-        })
-        // console.log(selectedState.selectedItem)
-    }
-    console.log(selectedState.selectedItem)
 
     return (
         <SafeAreaView style={globalStyles.mainView}>
-            <View style={globalStyles.headerView}>
+            {/* <View style={globalStyles.headerView}>
                 <ImageBackground
                     style={globalStyles.headerImage}
                     source={require('../../Utils/Images/apiHeader.jpg')}></ImageBackground>
@@ -91,7 +89,7 @@ export default function ItemDetails({ Navigation, route }) {
                 ) : selectedState.sameCatListFiltered.length > 0 ? (
                     <ScrollView style={globalStyles.scrollView}>
                         <Text style={globalStyles.categoryHeading}>
-                            {selectedState.selectedItem.category}
+                            {selectedState.selectedItem[0].category}
                         </Text>
                         <View style={styles.selectedItemView}>
                             <View style={styles.selectedItemUpperView}>
@@ -99,15 +97,15 @@ export default function ItemDetails({ Navigation, route }) {
                                     <Image
                                         resizeMode="contain"
                                         style={styles.selectedItemImage}
-                                        source={{ uri: `${selectedState.selectedItem.image}` }}
+                                        source={{ uri: `${selectedState.selectedItem[0].image}` }}
                                     />
                                 </View>
                                 <View style={styles.selectedItemRightView}>
                                     <Text style={globalStyles.price}>
-                                        ${selectedState.selectedItem.price}
+                                        ${selectedState.selectedItem[0].price}
                                     </Text>
                                     <Text style={globalStyles.text}>
-                                        {selectedState.selectedItem.title}
+                                        {selectedState.selectedItem[0].title}
                                     </Text>
                                 </View>
                             </View>
@@ -117,7 +115,7 @@ export default function ItemDetails({ Navigation, route }) {
                                         Description:
                                     </Text>
                                     <Text style={globalStyles.text}>
-                                        {selectedState.selectedItem.description}
+                                        {selectedState.selectedItem[0].description}
                                     </Text>
                                 </View>
                             </ScrollView>
@@ -125,9 +123,9 @@ export default function ItemDetails({ Navigation, route }) {
                         <View style={[globalStyles.cardView]}>
                             {selectedState.sameCatListFiltered.map((e, i) => (
                                 <TouchableOpacity
-                                    style={[globalStyles.cardUnit, { borderRadius: 15 }]}
+                                    style={[globalStyles.cardUnit]}
                                     key={i}
-                                    onPress={() => onSameCatPressHandler(e.id)}
+                                    onPress={(e) => onSameCatPressHandler(e.id)}
 
                                 >
                                     <View style={{ justifyContent: 'space-between', flex: 7 }}>
@@ -149,43 +147,43 @@ export default function ItemDetails({ Navigation, route }) {
                         no data found
                     </Text>
                 )}
-            </View>
+            </View> */}
         </SafeAreaView >
     );
 }
 
 const styles = StyleSheet.create({
     selectedItemView: {
-        justifyContent: 'center',
-        width: '95%',
-        padding: '3.5%',
-        borderRadius: 30,
-        marginHorizontal: 10,
-        height: 170,
-        backgroundColor: 'lightyellow',
-    },
+    justifyContent: 'center',
+    width: '95%',
+    padding: '3.5%',
+    borderRadius: 30,
+    marginHorizontal: 10,
+    height: '40%',
+    backgroundColor: 'lightyellow',
+},
     selectedItemUpperView: {
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: "flex-start",
-        width: '100%',
-        // flex: 4,
-        height: '50%',
-        marginBottom: 8,
-        // backgroundColor: "blue",
-    },
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: "flex-start",
+    width: '100%',
+    // flex: 4,
+    height: '50%',
+    marginBottom: 8,
+    // backgroundColor: "blue",
+},
     selectedItemLeftView: {
-        marginRight: 15,
-        flex: 2,
-        // backgroundColor: "red",
-    },
+    marginRight: 15,
+    flex: 2,
+    // backgroundColor: "red",
+},
     selectedItemRightView: {
-        flex: 6,
-    },
+    flex: 6,
+},
     selectedItemLowerView: {
-        height: '3%',
-    },
+    height: '3%',
+},
     selectedItemImage: {
-        height: '100%',
-    },
+    height: '100%',
+},
 });
