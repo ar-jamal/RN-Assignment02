@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import cusColors from './src/Utils/colors';
+
 const globalStyles = StyleSheet.create({
   container: {
     width: '100%',

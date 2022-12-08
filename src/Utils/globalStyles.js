@@ -1,14 +1,8 @@
-import { StyleSheet } from "react-native"
-import cusColors from "./colors"
+import {StyleSheet} from 'react-native';
+import cusColors from './colors';
 
 const globalStyles = StyleSheet.create({
-    mBottomTabStyle: {
-        // justifyContent: "center",
-        // height: 40,
-        // padding: 5,
-        // backgroundColor: "red",
-    },
-    mainView: {
+        mainView: {
         width: '100%',
         height: '100%',
         flex: 1,
@@ -30,18 +24,18 @@ const globalStyles = StyleSheet.create({
         padding: 4,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: cusColors.lighSkyColor,
+        backgroundColor: cusColors.offWhite02,
     },
     scrollView: {
         width: "100%",
-
+        
         // backgroundColor: "lightyellow",
 
     },
     categoryHeading: {
         fontSize: 16,
         fontWeight: "bold",
-        margin: 8,
+        margin: 12,
         textDecorationLine: "underline"
     },
     cardView: {
@@ -54,7 +48,7 @@ const globalStyles = StyleSheet.create({
         // opacity: .5,
     },
     cardUnit: {
-        width: "21.95%",
+        width: "20.95%",
         // width: 85,
         height: 220,
         margin: 6,
