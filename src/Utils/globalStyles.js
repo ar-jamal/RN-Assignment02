@@ -6,7 +6,8 @@ const globalStyles = StyleSheet.create({
         // justifyContent: "center",
         // height: 40,
         // padding: 5,
-        // backgroundColor: "red",
+        backgroundColor: cusColors.blueColor,
+        // color: cusColors.pur
     },
     mainView: {
         width: '100%',

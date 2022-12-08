@@ -12,12 +12,12 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
+import cusColors from '../../Utils/colors';
 import globalStyles from '../../Utils/globalStyles';
 
 export default function ItemDetails({ Navigation, route }) {
   const selectedItemId = route.params[0];
-  const selectedItem = route.params[1].filter(e => e.id === selectedItemId);
-  const sameCatList = route.params[1].filter(e => e.id !== selectedItemId);
+  const sameCatList = route.params[1]
 
   // console.log(sameCatList)
   const [selectedState, setSelectedState] = useState({
@@ -45,12 +45,13 @@ export default function ItemDetails({ Navigation, route }) {
       <View
         style={{
           justifyContent: 'space-between',
-          backgroundColor: 'yellow',
           width: '100%',
           flex: 3,
           paddingHorizontal: 6,
           paddingBottom: 6,
-          borderRadius: 15
+          backgroundColor: 'yellow',
+          // backgroundColor: cusColors.purpleLavender,
+          // borderRadius: 15
         }}>
         <Text style={globalStyles.text}>{title}</Text>
         {cusChip(val)}
@@ -67,10 +68,8 @@ export default function ItemDetails({ Navigation, route }) {
       selectedItem: selectedItem02,
       sameCatListFiltered: sameCatListFiltered02
     })
-    // console.log(selectedState.selectedItem)
   }
-  console.log(selectedState.selectedItem)
-  console.log(selectedItem);
+  // console.log(selectedState.selectedItem)
 
   return (
     <SafeAreaView style={globalStyles.mainView}>
@@ -93,41 +92,48 @@ export default function ItemDetails({ Navigation, route }) {
         ) : sameCatList.length > 0 ? (
           <ScrollView style={globalStyles.scrollView}>
             <Text style={globalStyles.categoryHeading}>
-              {selectedItem[0].category}
+              {selectedState.selectedItem.category}
             </Text>
             <View style={styles.selectedItemView}>
               <View style={styles.selectedItemLeftView}>
                 <Image
                   resizeMode="contain"
                   style={styles.selectedItemImage}
-                  source={{ uri: `${selectedItem[0].image}` }}
+                  source={{ uri: `${selectedState.selectedItem.image}` }}
                 />
                 <Text style={globalStyles.price}>
-                  Price: ${selectedItem[0].price}
+                  Price: ${selectedState.selectedItem.price}
                 </Text>
               </View>
               <View style={styles.selectedItemRightView}>
-                <Text style={globalStyles.text}>{selectedItem[0].title}</Text>
+                <Text style={globalStyles.text}>{selectedState.selectedItem.title}</Text>
                 <Text style={{ fontSize: 14, fontWeight: '600' }}>
                   Description:
                 </Text>
                 <View
-                  style={{ height: 60 }}
+                  style={{ height: 40 }}
                 >
                   <ScrollView>
                     <Text style={globalStyles.text}>
-                      {selectedItem[0].description}
+                      {selectedState.selectedItem.description}
                     </Text>
                   </ScrollView>
                 </View>
               </View>
             </View>
+            <View style={{
+              height: 20,
+              // borderBottomColor: cusColors.purpleLavenderDark,
+              borderBottomWidth: StyleSheet.hairlineWidth,
+              // paddingHorizontal: 6
+            }}
+            />
             <View style={[globalStyles.cardView]}>
               {sameCatList.map((e, i) => (
                 <TouchableOpacity
                   style={[globalStyles.cardUnit]}
                   key={i}
-                  onpress={() => onSameCatPressHandler(e.id)}>
+                  onPress={() => onSameCatPressHandler(e.id)}>
                   <View style={{ justifyContent: 'space-between', flex: 7 }}>
                     <Image
                       resizeMode="contain"
@@ -153,36 +159,40 @@ export default function ItemDetails({ Navigation, route }) {
 
 const styles = StyleSheet.create({
   selectedItemView: {
+    flexDirection: 'row',
     justifyContent: 'center',
     width: '95%',
-    padding: '3.5%',
+    padding: 20,
     borderRadius: 30,
     marginHorizontal: 10,
-    height: 170,
-    backgroundColor: 'lightyellow',
+    height: 160,
+    backgroundColor: cusColors.purpleLavenderLight,
+    // backgroundColor: 'lightyellow',
   },
-  selectedItemUpperView: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: "flex-start",
-    width: '100%',
-    // flex: 4,
-    height: '50%',
-    marginBottom: 8,
-    // backgroundColor: "blue",
-  },
+  // selectedItemUpperView: {
+  //   justifyContent: 'flex-start',
+  //   alignItems: "flex-start",
+  //   width: '100%',
+  //   // flex: 4,
+  //   height: '50%',
+  //   marginBottom: 8,
+  //   // backgroundColor: "blue",
+  // },
   selectedItemLeftView: {
     marginRight: 15,
     flex: 2,
+    height: "100%"
     // backgroundColor: "red",
   },
   selectedItemRightView: {
     flex: 6,
+    height: "100%"
   },
-  selectedItemLowerView: {
-    height: '3%',
-  },
+  // selectedItemLowerView: {
+  //   height: '3%',
+  // },
   selectedItemImage: {
-    height: '100%',
+    height: '80%',
+    // backgroundColor: "yellow"
   },
 })

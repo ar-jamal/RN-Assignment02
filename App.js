@@ -8,7 +8,7 @@ import FemaleCategory from './src/Config/Screens/femaleCategory';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import globalStyles from './src/Utils/globalStyles';
 import Icon from 'react-native-vector-icons/dist/MaterialIcons';
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+// import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 
 const Stack = createNativeStackNavigator();
 const MBottomTab = createMaterialBottomTabNavigator();
@@ -19,11 +19,12 @@ const MainScreen = () => {
       barStyle={globalStyles.mBottomTabStyle}
     >
       <MBottomTab.Screen
+        independent={true}
         name="Home"
         component={HomeScreen}
         options={{
           tabBarIcon: () => {
-            <MaterialIcons name="roofing" color="white" size={8} />
+            <Icon name="roofing" color="white" size={8} />
           }
         }}
       />
