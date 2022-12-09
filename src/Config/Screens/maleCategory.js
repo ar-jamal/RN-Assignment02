@@ -70,6 +70,7 @@ export default function MaleCategory({ Navigation, route }) {
 
     return (
         <SafeAreaView style={globalStyles.mainView}>
+            <Text>Male Category</Text>
             {/* <View style={globalStyles.headerView}>
                 <ImageBackground
                     style={globalStyles.headerImage}

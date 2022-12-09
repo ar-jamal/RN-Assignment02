@@ -35,7 +35,6 @@ const globalStyles = StyleSheet.create({
     },
     scrollView: {
         width: "100%",
-
         // backgroundColor: "lightyellow",
 
     },
@@ -43,7 +42,8 @@ const globalStyles = StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold",
         margin: 8,
-        textDecorationLine: "underline"
+        textDecorationLine: "underline",
+        // alignSelf: 'flex-start',
     },
     cardView: {
         flexWrap: "wrap",

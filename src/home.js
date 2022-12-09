@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Icon from 'react-native-vector-icons/dist/Entypo'
+import Icon from 'react-native-vector-icons/Entypo'
 import {
   Button,
   SafeAreaView,
@@ -81,12 +81,12 @@ export default function HomeScreen() {
       <View style={globalStyles.headerView}>
         <ImageBackground
           style={globalStyles.headerImage}
-          source={require('./Utils/Images/apiHeader.jpg')}></ImageBackground>
+          source={require('./Utils/Images/apiHeader.jpg')}/>
       </View>
       <View style={globalStyles.bodyView}>
         <ScrollView style={globalStyles.scrollView}>
           <Text style={globalStyles.categoryHeading}> All Categories</Text>
-          <Icon name= "home" color= "blue" size= {100} />
+          <Icon name="home" color="blue" size={100} />
           <View style={globalStyles.cardView}>
             {loader ? (
               <Image
